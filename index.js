@@ -87,13 +87,13 @@ let subscriptions = [
   //the function should iterate through the input array subscriptions
   //set every other cancel property to true
   //only do this if the subscription is more than 10 dollars
-  function cancelSubscription(array) {
+  function cancelSubscriptions(array) {
     for (let i = 0; i < array.length; i += 2) {
       if (array[i].costPerMonth > 10) {
         array[i].cancel = true; 
       }
     }
-   return array;
+   //return array;
   };
 
  
@@ -118,7 +118,7 @@ let subscriptions = [
       // Add a newline "\n" unless it's the last item
       return acc + formatted + (index === array.length - 1 ? "" : "\n");
     }, ""); // Start with an empty string
-  }
+  };
   
   
   
