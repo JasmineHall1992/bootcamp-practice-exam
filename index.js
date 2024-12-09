@@ -83,12 +83,20 @@ let subscriptions = [
   /////////////////////////////////////////////////////////////////
   // PROBLEM #1 ///////////////////////////////////////////////////
   /////////////////////////////////////////////////////////////////
-  
-  
-  let cancelSubscriptions = function(){
-    
+  //create a function that takes in one parameter (array)
+  //the function should iterate through the input array subscriptions
+  //set every other cancel property to true
+  //only do this if the subscription is more than 10 dollars
+  function cancelSubscription(array) {
+    for (let i = 0; i < array.length; i += 2) {
+      if (array[i].costPerMonth > 10) {
+        array[i].cancel = true; 
+      }
+    }
+   return array;
   };
-  
+
+ 
   
   /*
   NOTE: If you test this function in the console, remember to comment 
@@ -102,9 +110,17 @@ let subscriptions = [
   /////////////////////////////////////////////////////////////////
   
   
-  let subscriptionList = function(){
-   
-  };
+  function subscriptionList(array) {
+    return array.reduce((acc, currentValue, index) => {
+      // Format each subscription as "Name - Cost"
+      const formatted = `${currentValue.name} - ${currentValue.costPerMonth}`;
+      
+      // Add a newline "\n" unless it's the last item
+      return acc + formatted + (index === array.length - 1 ? "" : "\n");
+    }, ""); // Start with an empty string
+  }
+  
+  
   
   
   
